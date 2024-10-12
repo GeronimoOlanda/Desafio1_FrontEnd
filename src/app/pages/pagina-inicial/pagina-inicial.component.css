@@ -1,0 +1,13 @@
+.container {
+    padding: 20px;
+  }
+  
+  .concluida {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+  }
+  

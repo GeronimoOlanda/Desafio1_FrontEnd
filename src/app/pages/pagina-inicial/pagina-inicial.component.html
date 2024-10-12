@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Tarefas</h1>
+    <button (click)="adicionarTarefa()">Adicionar Tarefa</button>
+  
+    <ul>
+      <li *ngFor="let tarefa of tarefas">
+        <span [ngClass]="{'concluida': tarefa.concluida}">{{ tarefa.titulo }} - {{ tarefa.descricao }}</span>
+        <button (click)="marcarComoConcluida(tarefa)">Concluir</button>
+        <button (click)="atualizarTarefa(tarefa)">Atualizar</button>
+        <button (click)="removerTarefa(tarefa)">Remover</button>
+      </li>
+    </ul>
+  
+    <div class="pagination">
+      <!-- Adicione aqui a lógica de paginação, se necessário -->
+    </div>
+  </div>
+  

@@ -1,0 +1,13 @@
+<nav>
+  <ul>
+    <li><a href="#" routerLink="/">Home</a></li>
+    <!-- Mostra o link de Login se o usuário NÃO estiver autenticado -->
+    <li *ngIf="!isAuthenticated"><a href="#" (click)="login()">Login</a></li>
+    
+    <!-- Mostra o botão de Logout e o nome do usuário se estiver autenticado -->
+    <li *ngIf="isAuthenticated">
+      <a href="#" (click)="logout()">Logout</a>
+      <span>Bem-vindo, {{ userName }}!</span>
+    </li>
+  </ul>
+</nav>
