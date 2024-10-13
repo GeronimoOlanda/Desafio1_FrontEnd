@@ -1,0 +1,51 @@
+import { Component, OnInit } from '@angular/core';
+import { TarefasService } from '../../services/tarefa.service';
+import { Tarefa } from '../../models/tarefa';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+
+@Component({
+  selector: 'app-tarefas',
+  standalone: true,
+  imports: [FormsModule, CommonModule],
+  templateUrl: './tarefas.component.html',
+  styleUrls: ['./tarefas.component.css']
+})
+export class TarefasComponent implements OnInit {
+  tarefas: Tarefa[] = [];
+  page = 1;
+  pageSize = 10;
+  newTarefa: Tarefa = { id: 0, titulo: '', descricao: '', concluida: false, usuarioId: 0 }; // Aqui
+
+  constructor(private tarefasService: TarefasService) { }
+
+  ngOnInit(): void {
+    this.loadTarefas();
+  }
+
+  loadTarefas(): void {
+    this.tarefasService.getTarefas(this.page, this.pageSize).subscribe(tarefas => {
+      this.tarefas = tarefas;
+    });
+  }
+
+  addTarefa(): void {
+    this.newTarefa.usuarioId = 1; // Defina o ID do usuário autenticado aqui (ou de outra forma, se você tiver um serviço de autenticação)
+    this.tarefasService.addTarefa(this.newTarefa).subscribe(() => {
+      this.loadTarefas();
+      this.newTarefa = { id: 0, titulo: '', descricao: '', concluida: false, usuarioId: 0 }; // Reseta os campos
+    });
+  }
+
+  toggleConcluida(tarefa: Tarefa): void {
+    tarefa.concluida = !tarefa.concluida;
+    this.tarefasService.updateTarefa(tarefa).subscribe();
+  }
+
+  deleteTarefa(id: number): void {
+    this.tarefasService.deleteTarefa(id).subscribe(() => {
+      this.loadTarefas();
+    });
+  }
+}

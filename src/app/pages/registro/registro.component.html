@@ -1,5 +1,5 @@
-<h2>Registro</h2>
-<form (ngSubmit)="register()">
+<h2>REGISTRAR-SE</h2>
+<form (ngSubmit)="register()" class="register-form">
   <label for="username">Nome de Usuário</label>
   <input id="username" type="text" [(ngModel)]="username" name="username" required>
 
@@ -11,4 +11,5 @@
 
   <button type="submit">Registrar</button>
 </form>
-<p *ngIf="errorMessage">{{ errorMessage }}</p>
+
+<p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>

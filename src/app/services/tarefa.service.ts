@@ -1,29 +1,44 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Tarefa } from '../models/tarefa';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TarefaService {
-  private baseUrl = 'https://seu-endpoint-api.com/tarefas'; // Altere para o seu endpoint
+export class TarefasService {
+  private apiUrl = 'https://localhost:7112/api/tarefas'; // URL do seu backend
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getTarefas(pagina: number, tarefasPorPagina: number): Observable<Tarefa[]> {
-    return this.http.get<Tarefa[]>(`${this.baseUrl}?pagina=${pagina}&itensPorPagina=${tarefasPorPagina}`);
+  private getAuthHeaders(): HttpHeaders {
+    const token = localStorage.getItem('authToken'); // Supondo que você armazena o token no localStorage
+    return new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
   }
 
-  adicionarTarefa(tarefa: Tarefa): Observable<Tarefa> {
-    return this.http.post<Tarefa>(this.baseUrl, tarefa);
+  getTarefas(page: number, pageSize: number): Observable<Tarefa[]> {
+    return this.http.get<Tarefa[]>(`${this.apiUrl}?page=${page}&pageSize=${pageSize}`, {
+      headers: this.getAuthHeaders() // Adicione o cabeçalho de autenticação
+    });
   }
 
-  atualizarTarefa(tarefa: Tarefa): Observable<Tarefa> {
-    return this.http.put<Tarefa>(`${this.baseUrl}/${tarefa.id}`, tarefa);
+  addTarefa(tarefa: Tarefa): Observable<Tarefa> {
+    return this.http.post<Tarefa>(this.apiUrl, tarefa, {
+      headers: this.getAuthHeaders() // Adicione o cabeçalho de autenticação
+    });
   }
 
-  removerTarefa(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  updateTarefa(tarefa: Tarefa): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/${tarefa.id}`, tarefa, {
+      headers: this.getAuthHeaders() // Adicione o cabeçalho de autenticação
+    });
+  }
+
+  deleteTarefa(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`, {
+      headers: this.getAuthHeaders() // Adicione o cabeçalho de autenticação
+    });
   }
 }

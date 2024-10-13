@@ -1,5 +1,5 @@
-<h2>Login</h2>
-<form (ngSubmit)="login()">
+<h2>LOGIN</h2>
+<form (ngSubmit)="login()" class="login-form">
   <label for="username">Nome de Usuário</label>
   <input id="username" type="text" [(ngModel)]="username" name="username" required>
 
@@ -8,4 +8,6 @@
 
   <button type="submit">Entrar</button>
 </form>
-<p *ngIf="errorMessage">{{ errorMessage }}</p>
+
+<p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+<a href="/registro" class="register-link">Não tem uma conta? Registre-se</a>

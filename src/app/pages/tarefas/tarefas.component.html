@@ -1,0 +1,21 @@
+<div>
+    <h2>Lista de Tarefas</h2>
+    <div>
+      <input [(ngModel)]="newTarefa.titulo" placeholder="Título" />
+      <input [(ngModel)]="newTarefa.descricao" placeholder="Descrição" />
+      <button (click)="addTarefa()">Adicionar Tarefa</button>
+    </div>
+  
+    <ul>
+      <li *ngFor="let tarefa of tarefas">
+        <span [style.textDecoration]="tarefa.concluida ? 'line-through' : 'none'">
+          {{ tarefa.titulo }} - {{ tarefa.descricao }}
+        </span>
+        <button (click)="toggleConcluida(tarefa)">Marcar como {{ tarefa.concluida ? 'não concluída' : 'concluída' }}</button>
+        <button (click)="deleteTarefa(tarefa.id)">Remover</button>
+      </li>
+    </ul>
+    
+    <!-- Implementar paginação aqui, se necessário -->
+  </div>
+  
