@@ -5,10 +5,6 @@
   <ul class="navbar-menu">
     <li *ngIf="!isAuthenticated" ><a href="#" routerLink="/">INÍCIO</a></li>
     <li *ngIf="!isAuthenticated"><a href="#" (click)="login()">ENTRAR</a></li>
-    <li *ngIf="isAuthenticated" class="welcome">
-      <a href="/tarefas" >TAREFAS</a>
-      
-    </li>
     
     <li *ngIf="isAuthenticated" class="welcome">
       <a href="#" (click)="logout()">SAIR</a>
