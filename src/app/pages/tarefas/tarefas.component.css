@@ -157,3 +157,31 @@ input:focus, button:focus {
     transform: scale(1.05); /* Efeito de "aumento" ao passar o mouse */
   }
   
+  .pagination {
+    display: flex; /* Flexbox para alinhar os itens */
+    justify-content: center; /* Centraliza os botões */
+    align-items: center; /* Alinhamento vertical */
+    margin-top: 20px; /* Espaçamento acima da paginação */
+  }
+  
+  .pagination button {
+    padding: 10px 15px; /* Espaçamento interno */
+    margin: 0 5px; /* Espaçamento entre os botões */
+    background-color: #007bff; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remove borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para pointer */
+    transition: background-color 0.3s; /* Transição suave */
+  }
+  
+  .pagination button:disabled {
+    background-color: #ccc; /* Cor para botões desabilitados */
+    cursor: not-allowed; /* Cursor desativado */
+  }
+  
+  .pagination span {
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 0 10px; /* Espaçamento ao redor do número da página */
+  }
+  

@@ -20,5 +20,10 @@
     </li>
   </ul>
 
-  <!-- Implementar paginação aqui, se necessário -->
+  <!-- Controles de paginação -->
+  <div class="pagination">
+    <button (click)="previousPage()" [disabled]="page === 1">Anterior</button>
+    <span>Página {{ page }}</span>
+    <button (click)="nextPage()" [disabled]="tarefas.length < pageSize">Próxima</button>
+  </div>
 </div>
