@@ -30,7 +30,7 @@ export class TarefasComponent implements OnInit {
   }
 
   addTarefa(): void {
-    this.newTarefa.usuarioId = 1; // Defina o ID do usuário autenticado aqui
+    this.newTarefa.usuarioId = 1; //
     this.tarefasService.addTarefa(this.newTarefa).subscribe(() => {
       this.loadTarefas();
       this.newTarefa = { id: 0, titulo: '', descricao: '', concluida: false, usuarioId: 0 }; // Reseta os campos

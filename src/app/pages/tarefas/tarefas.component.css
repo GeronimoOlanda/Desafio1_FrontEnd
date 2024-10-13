@@ -4,120 +4,120 @@
 }
 /* Container principal da lista de tarefas */
 .task-container {
-    max-width: 600px; /* Largura máxima */
-    margin: 0 auto; /* Centralizar */
-    padding: 20px; /* Espaçamento interno */
-    background-color: #f9f9f9; /* Fundo claro */
-    border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 600px; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
     margin-top: 20px;
   }
   
   /* Estilização do título */
   h2 {
-    text-align: center; /* Centraliza o título */
-    color: #333; /* Cor do texto */
+    text-align: center; 
+    color: #333; 
   }
   
   /* Estilização da seção de input */
   .task-input {
-    display: flex; /* Flexbox para alinhar os inputs e o botão */
-    margin-bottom: 20px; /* Espaçamento abaixo */
+    display: flex; 
+    margin-bottom: 20px;
   }
   
   .input-titulo,
   .input-descricao {
-    flex: 1; /* Ocupa espaço disponível */
-    padding: 10px; /* Espaçamento interno */
-    margin-right: 10px; /* Espaçamento à direita */
-    border: 1px solid #ddd; /* Borda leve */
-    border-radius: 4px; /* Bordas arredondadas */
-    transition: border-color 0.3s; /* Transição suave para a borda */
+    flex: 1; 
+    padding: 10px;
+    margin-right: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    transition: border-color 0.3s; 
   }
   
   .input-titulo:focus,
   .input-descricao:focus {
-    border-color: #007bff; /* Borda azul ao focar */
+    border-color: #007bff;
   }
   
   /* Estilização do botão de adicionar tarefa */
   .btn-add {
-    padding: 10px 15px; /* Espaçamento interno */
-    background-color: #007bff; /* Azul */
-    color: white; /* Texto branco */
-    border: none; /* Remove borda */
-    border-radius: 4px; /* Bordas arredondadas */
-    cursor: pointer; /* Muda o cursor para pointer */
-    transition: background-color 0.3s; /* Transição suave */
+    padding: 10px 15px; 
+    background-color: #007bff;
+    color: white; 
+    border: none;
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s;
   }
   
   .btn-add:hover {
-    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+    background-color: #0056b3; 
   }
   
   /* Estilização da lista de tarefas */
   .task-list {
-    list-style: none; /* Remove marcadores da lista */
-    padding: 0; /* Remove preenchimento */
+    list-style: none; 
+    padding: 0; 
   }
   
   .task-item {
-    display: flex; /* Flexbox para alinhar título e ações */
-    justify-content: space-between; /* Espaço entre título e botões */
-    align-items: center; /* Alinhamento vertical central */
-    padding: 10px; /* Espaçamento interno */
-    border-bottom: 1px solid #eee; /* Linha separadora */
-    transition: background-color 0.3s; /* Transição suave */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px; 
+    border-bottom: 1px solid #eee; 
+    transition: background-color 0.3s;
   }
   
   .task-item:hover {
-    background-color: #f1f1f1; /* Fundo ao passar o mouse */
+    background-color: #f1f1f1; 
   }
   
-  /* Estilização do título da tarefa */
+
   .task-title {
-    flex: 1; /* Ocupa espaço disponível */
-    font-size: 16px; /* Tamanho da fonte */
-    color: #333; /* Cor do texto */
+    flex: 1; 
+    font-size: 16px; 
+    color: #333; 
   }
   
   /* Estilização dos botões de ação */
   .task-actions {
-    display: flex; /* Flexbox para os botões */
+    display: flex; 
   }
   
   .btn-toggle,
   .btn-remove {
-    padding: 5px 10px; /* Espaçamento interno */
-    margin-left: 10px; /* Espaçamento à esquerda */
-    border: none; /* Remove borda */
-    border-radius: 4px; /* Bordas arredondadas */
-    cursor: pointer; /* Muda o cursor para pointer */
-    transition: background-color 0.3s; /* Transição suave */
+    padding: 5px 10px; 
+    margin-left: 10px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
   }
   
   .btn-toggle {
-    background-color: #28a745; /* Verde */
-    color: white; /* Texto branco */
+    background-color: #28a745; 
+    color: white; 
   }
   
   .btn-toggle:hover {
-    background-color: #218838; /* Verde mais escuro ao passar o mouse */
+    background-color: #218838; 
   }
   
   .btn-remove {
-    background-color: #dc3545; /* Vermelho */
-    color: white; /* Texto branco */
+    background-color: #dc3545; 
+    color: white; 
   }
   
   .btn-remove:hover {
-    background-color: #c82333; /* Vermelho mais escuro ao passar o mouse */
+    background-color: #c82333; 
   }
   
   /* Foco visível para navegação por teclado */
 input:focus, button:focus {
-    outline: 3px solid #007bff; /* Contorno azul ao focar */
-    outline-offset: 2px; /* Distância do contorno */
+    outline: 3px solid #007bff; 
+    outline-offset: 2px; 
   }
   
   .sr-only {
@@ -137,51 +137,51 @@ input:focus, button:focus {
     cursor: not-allowed;
   }
   
-  /* Transição suave nos botões */
+ 
   button {
     transition: background-color 0.3s ease;
   }
   
-  /* Mais espaço entre as tarefas */
+
   .task-item {
-    padding: 15px; /* Mais espaçamento */
-    margin-bottom: 10px; /* Espaço entre tarefas */
+    padding: 15px; 
+    margin-bottom: 10px; 
     border-radius: 8px;
   }
   
   .task-actions button {
-    font-size: 14px; /* Fontes um pouco maiores */
+    font-size: 14px; 
   }
   
   .task-actions button:hover {
-    transform: scale(1.05); /* Efeito de "aumento" ao passar o mouse */
+    transform: scale(1.05); 
   }
   
   .pagination {
-    display: flex; /* Flexbox para alinhar os itens */
-    justify-content: center; /* Centraliza os botões */
-    align-items: center; /* Alinhamento vertical */
-    margin-top: 20px; /* Espaçamento acima da paginação */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 20px; 
   }
   
   .pagination button {
-    padding: 10px 15px; /* Espaçamento interno */
-    margin: 0 5px; /* Espaçamento entre os botões */
-    background-color: #007bff; /* Cor de fundo */
-    color: white; /* Cor do texto */
-    border: none; /* Remove borda */
-    border-radius: 4px; /* Bordas arredondadas */
-    cursor: pointer; /* Muda o cursor para pointer */
-    transition: background-color 0.3s; /* Transição suave */
+    padding: 10px 15px; 
+    margin: 0 5px; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
   }
   
   .pagination button:disabled {
-    background-color: #ccc; /* Cor para botões desabilitados */
-    cursor: not-allowed; /* Cursor desativado */
+    background-color: #ccc; 
+    cursor: not-allowed; 
   }
   
   .pagination span {
-    font-size: 16px; /* Tamanho da fonte */
-    margin: 0 10px; /* Espaçamento ao redor do número da página */
+    font-size: 16px; 
+    margin: 0 10px; 
   }
   
