@@ -16,7 +16,10 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {
+    this.username = '';
+    this.password = '';
+  }
 
   login(): void {
     this.authService.login(this.username, this.password).subscribe({
@@ -24,7 +27,9 @@ export class LoginComponent {
         this.authService.setToken(res.token);
         
         this.router.navigate(['/tarefas']);  // Redireciona para a página inicial após o login
-       location.href= '/tarefas'
+        location.href= '/tarefas'
+        this.username = '';
+        this.password = '';
       },
       error: (err) => {
         this.errorMessage = err.error?.message || 'Erro ao fazer login. Tente novamente.';
