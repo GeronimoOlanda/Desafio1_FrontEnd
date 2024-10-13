@@ -1,13 +1,19 @@
-<nav>
-  <ul>
-    <li><a href="#" routerLink="/">Home</a></li>
-    <!-- Mostra o link de Login se o usuário NÃO estiver autenticado -->
-    <li *ngIf="!isAuthenticated"><a href="#" (click)="login()">Login</a></li>
-    
-    <!-- Mostra o botão de Logout e o nome do usuário se estiver autenticado -->
-    <li *ngIf="isAuthenticated">
-      <a href="#" (click)="logout()">Logout</a>
-      <span>Bem-vindo, {{ userName }}!</span>
+<nav class="navbar">
+  <div class="navbar-brand">
+    <a href="#" routerLink="/" class="nome_gerenciador" title="Gerenciador de Tarefas">GETA</a>
+  </div>
+  <ul class="navbar-menu">
+    <li *ngIf="!isAuthenticated" ><a href="#" routerLink="/">INÍCIO</a></li>
+    <li *ngIf="!isAuthenticated"><a href="#" (click)="login()">ENTRAR</a></li>
+    <li *ngIf="isAuthenticated" class="welcome">
+      <a href="/tarefas" >TAREFAS</a>
+      
     </li>
+    
+    <li *ngIf="isAuthenticated" class="welcome">
+      <a href="#" (click)="logout()">SAIR</a>
+      
+    </li>
+
   </ul>
 </nav>

@@ -23,8 +23,8 @@ export class LoginComponent {
       next: (res: any) => {
         this.authService.setToken(res.token);
         
-        this.router.navigate(['/pagina-inicial']);  // Redireciona para a página inicial após o login
-       location.href= '/pagina-inicial'
+        this.router.navigate(['/tarefas']);  // Redireciona para a página inicial após o login
+       location.href= '/tarefas'
       },
       error: (err) => {
         this.errorMessage = err.error?.message || 'Erro ao fazer login. Tente novamente.';
