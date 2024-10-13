@@ -3,7 +3,6 @@
     <a href="#" routerLink="/" class="nome_gerenciador" title="Gerenciador de Tarefas">GETA</a>
   </div>
   <ul class="navbar-menu">
-    <li *ngIf="!isAuthenticated" ><a href="#" routerLink="/">INÍCIO</a></li>
     <li *ngIf="!isAuthenticated"><a href="#" (click)="login()">ENTRAR</a></li>
     
     <li *ngIf="isAuthenticated" class="welcome">
