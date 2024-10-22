@@ -27,7 +27,6 @@ export class LoginComponent {
         this.authService.setToken(res.token);
         
         this.router.navigate(['/tarefas']);  // Redireciona para a página inicial após o login
-        location.href= '/tarefas'
         this.username = '';
         this.password = '';
       },
@@ -38,4 +37,5 @@ export class LoginComponent {
     });
    
   }
+  
 }

@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 export class TarefasComponent implements OnInit {
   tarefas: Tarefa[] = [];
   page = 1;
-  pageSize = 10;
+  pageSize = 5;
   newTarefa: Tarefa = { id: 0, titulo: '', descricao: '', concluida: false, usuarioId: 0 };
 
   constructor(private tarefasService: TarefasService) { }
