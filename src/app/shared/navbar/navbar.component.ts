@@ -12,37 +12,36 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  isAuthenticated = false; // Controle de autenticação
-  userName = '';  // Nome do usuário
+  isAuthenticated = false; 
+  userName = ''; 
 
   constructor(private authService: AuthService, private router: Router) {
     this.checkAuthentication();
   }
 
-  // Redireciona para a página de login
+
   login() {
     this.router.navigate(['/login']);
   }
 
-  // Realiza logout, limpa o token e redireciona
+  
   logout() {
-    this.authService.logout();  // Chama o logout do AuthService
+    this.authService.logout();  
     this.router.navigate(['/login']);
   }
 
-  // Verifica se o usuário está autenticado pelo token
+
   checkAuthentication() {
-    this.isAuthenticated = this.authService.isAuthenticated();  // Usa o método do AuthService
+    this.isAuthenticated = this.authService.isAuthenticated();  
     if (this.isAuthenticated) {
       const token = this.authService.getToken();
       if (token) {
         const payload = JSON.parse(atob(token.split('.')[1]));
-        this.userName = payload.nome; // Extrai o nome do payload
+        this.userName = payload.nome; 
       }
     }
   }
 
-  // Executa ao inicializar o componente
   ngOnInit() {
     this.checkAuthentication();
   }
