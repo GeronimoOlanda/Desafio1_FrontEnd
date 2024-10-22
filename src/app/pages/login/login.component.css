@@ -26,12 +26,13 @@ label {
 }
 
 input {
-  width: 100%; 
+  width: 95%; 
   padding: 10px; 
   margin-bottom: 20px; 
   border: 1px solid #ddd; 
   border-radius: 4px;
   transition: border 0.3s; 
+
 }
 
 input:focus {
